@@ -12,27 +12,30 @@
             margin: 0;
         }
 
+        .container {
+            text-align: center;
+        }
+
         h1 {
             font-weight: 700;
             font-size: 150px; /* Adjust the font size as needed */
             font-family: sans-serif;
             text-transform: uppercase;
-            display: block; /* Make it a block-level element */
         }
 
         h2 {
             font-weight: 700;
-            font-size: 100px; /* Adjust the font size as needed */
+            font-size: 30px; /* Adjust the font size as needed */
             font-family: sans-serif;
             text-transform: uppercase;
-            display: block; /* Make it a block-level element */
-            margin-top: 10px; /* Add some spacing between h1 and h2 */
         }
     </style>
 </head>
 <body>
-    <h1>No</h1>
-    <h2><span id="currentDateTime"></span></h2>
+    <div class="container">
+        <h1>No</h1>
+        <h2><span id="currentDateTime"></span></h2>
+    </div>
     <script>
         // Function to update the current date and time
         function updateCurrentDateTime() {
