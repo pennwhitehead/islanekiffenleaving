@@ -14,13 +14,24 @@
 
         h1 {
             font-weight: 700;
-            font-size: 150px;
+            font-size: 30px; /* Adjust the font size as needed */
             font-family: sans-serif;
             text-transform: uppercase;
         }
     </style>
 </head>
 <body>
-    <h1>No</h1>
+    <h1>No <span id="currentDateTime"></span></h1>
+    <script>
+        // Function to update the current date and time
+        function updateCurrentDateTime() {
+            const currentDate = new Date();
+            const formattedDate = `as of ${currentDate.toLocaleString()}`;
+            document.getElementById('currentDateTime').textContent = formattedDate;
+        }
+
+        // Call the function to update the current date and time
+        updateCurrentDateTime();
+    </script>
 </body>
 </html>
