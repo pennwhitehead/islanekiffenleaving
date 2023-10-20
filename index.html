@@ -18,34 +18,110 @@
 
         h1 {
             font-weight: 700;
-            font-size: 150px; /* Adjust the font size as needed */
             font-family: sans-serif;
             text-transform: uppercase;
+            font-size: 140px;
+            margin: 10px;
         }
 
         h2 {
             font-weight: 700;
-            font-size: 30px; /* Adjust the font size as needed */
             font-family: sans-serif;
             text-transform: uppercase;
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        h3, h4, h5, h6, h7 {
+            font-weight: 700;
+            font-family: sans-serif;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin: 10px;
+        }
+        .olemiss-logo {
+            width: 120px; /* Adjust the width as needed */
+            height: 50px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
+            margin-bottom: 20px;
+        }
+
+        .fau-logo {
+            width: 75px; /* Adjust the width as needed */
+            height: 50px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
+        }
+        .al-logo {
+            width: 60px; /* Adjust the width as needed */
+            height: 60px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
+        }
+        .usc-logo {
+            width: 45px; /* Adjust the width as needed */
+            height: 55px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
+        }
+        .ten-logo {
+            width: 45px; /* Adjust the width as needed */
+            height: 45px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
+        }
+        .raiders-logo {
+            width: 60px; /* Adjust the width as needed */
+            height: 60px; /* Adjust the height as needed */
+            display: inline; /* Make the logo display inline with the text */
+            vertical-align: middle; /* Align the logo vertically with the text */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>No</h1>
-        <h2><span id="currentDateTime"></span></h2>
+        <h2><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Ole_Miss_Rebels_logo.svg/1024px-Ole_Miss_Rebels_logo.svg.png" alt="Team Logo" class="olemiss-logo"><span id="currentDateTime"></span></h2>
+        <h3>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Florida_Atlantic_Owls_logo.svg/1200px-Florida_Atlantic_Owls_logo.svg.png" alt="Team Logo" class="fau-logo"> FAU: 1,087 days
+        </h3>
+        <h4>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Alabama_Crimson_Tide_logo.svg/1200px-Alabama_Crimson_Tide_logo.svg.png" alt="Team Logo" class="al-logo"> Alabama OC: 1,078 days
+        </h4>
+        <h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/USC_Trojans_logo.svg/1200px-USC_Trojans_logo.svg.png" alt="Team Logo" class="usc-logo"> USC: 1,358 days</h5>
+        <h6>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tennessee_Volunteers_logo.svg/2048px-Tennessee_Volunteers_logo.svg.png" alt="Team Logo" class="ten-logo"> Tennessee: 409 days</h6>
+        <h7>
+            <img src="https://upload.wikimedia.org/wikipedia/it/f/f1/Oakland_Raiders_logo.png" alt="Team Logo" class="raiders-logo">Raiders: 618 days</h7>
     </div>
-    <script>
-        // Function to update the current date and time
-        function updateCurrentDateTime() {
+        <script>
+        function updateTimeElapsed() {
+            // Define the date for December 6, 2019
+            const targetDate = new Date("2019-12-06T00:00:00Z");
+
+            // Get the current date and time
             const currentDate = new Date();
-            const formattedDate = `${currentDate.toLocaleString()}`;
-            document.getElementById('currentDateTime').textContent = formattedDate;
+
+            // Calculate the time difference in milliseconds
+            const timeDifference = currentDate - targetDate;
+
+            // Convert the time difference to days, hours, minutes, and seconds
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Display the time elapsed on the webpage
+            document.getElementById("currentDateTime").textContent = ` Ole Miss: ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
         }
 
-        // Call the function to update the current date and time
-        updateCurrentDateTime();
+        // Call the function to initially display the time elapsed
+        updateTimeElapsed();
+
+        // Update the time elapsed every second
+        setInterval(updateTimeElapsed, 1000);
     </script>
 </body>
 </html>
